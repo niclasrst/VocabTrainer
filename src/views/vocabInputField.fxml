@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane minHeight="-Infinity" prefHeight="76.0" prefWidth="500.0" stylesheets="@../styles/vocabInputFieldStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.vocabInputFieldController">
+   <children>
+      <JFXTextField fx:id="tf_lang1" layoutX="45.0" layoutY="25.0" prefHeight="25.0" promptText="Language 1" unFocusColor="#6f6f6f" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="255.0" AnchorPane.topAnchor="25.0" />
+      <JFXTextField fx:id="tf_lang2" layoutX="255.0" layoutY="25.0" prefHeight="25.0" promptText="Language 2" unFocusColor="#6f6f6f" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="255.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="25.0" />
+      <JFXButton fx:id="btn_more" alignment="CENTER" ellipsisString="" layoutX="460.0" layoutY="24.0" onAction="#onClick" prefHeight="30.0" prefWidth="30.0" ripplerFill="#cdcdcd" textAlignment="CENTER" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="24.0">
+         <graphic>
+            <FontAwesomeIconView fill="#cdcdcd" glyphName="ELLIPSIS_V" size="20" />
+         </graphic></JFXButton>
+      <JFXButton fx:id="btn_delete" layoutX="10.0" layoutY="24.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" ripplerFill="#ff6767" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="24.0">
+         <graphic>
+            <FontAwesomeIconView fill="#e84b4b" glyphName="TRASH_ALT" size="17" />
+         </graphic></JFXButton>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6f6f6f" height="30.0" layoutX="249.0" layoutY="25.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="2.0" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="249.0" AnchorPane.topAnchor="25.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="1.0" layoutY="74.0" stroke="BLACK" strokeType="INSIDE" width="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+   </children>
+</AnchorPane>

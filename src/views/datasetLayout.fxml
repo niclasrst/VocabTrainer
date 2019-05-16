@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="430.0" prefWidth="500.0" style="-fx-background-color: #222f3e;" stylesheets="@../styles/dataset_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.datasetLayoutController">
+   <children>
+      <AnchorPane fx:id="pnl_vocab_input" prefHeight="430.0" prefWidth="500.0" style="-fx-background-color: #222f3e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <SVGPath content="M 100 350 L 250 200 L 400 350 L 600 250 L 800 350 " fill="#feca57" layoutX="-173.0" layoutY="134.0" AnchorPane.bottomAnchor="-50.0" AnchorPane.leftAnchor="-100.0" AnchorPane.rightAnchor="-127.0" />
+            <Label layoutX="14.0" layoutY="14.0" text="TYPE IN YOUR WORDS" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="25.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <VBox fx:id="pnl_vbox" layoutY="70.0" prefHeight="360.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+               <children>
+                  <fx:include source="vocabInputField.fxml" />
+                  <JFXButton fx:id="btn_add_field" alignment="CENTER" contentDisplay="CENTER" onAction="#actionHandler" prefHeight="40.0" prefWidth="40.0" ripplerFill="#4fc6b2" style="-fx-background-color: #fff; -fx-background-radius: 100;" text="+" textAlignment="CENTER" textFill="#24ee97">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets left="230.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <JFXButton fx:id="btn_done" ellipsisString="" layoutX="309.0" layoutY="13.0" onAction="#actionHandler" prefHeight="50.0" prefWidth="50.0" ripplerFill="#42ffa5" AnchorPane.rightAnchor="141.0" AnchorPane.topAnchor="13.0">
+               <graphic>
+                  <FontAwesomeIconView fill="#31eb97" glyphName="CHECK" size="25" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnl_add" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222f3e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <SVGPath content="M 50 200 Q 150 50 200 400 Q 250 550 300 300 Q 350 50 550 150 " fill="#ff6b6b" AnchorPane.rightAnchor="-200.0" AnchorPane.topAnchor="-150.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" text="YOUR VOCAB SETS" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="25.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <GridPane fx:id="pnl_btns" alignment="CENTER" prefHeight="370.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" valignment="CENTER" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <JFXButton fx:id="btn_add" alignment="CENTER" contentDisplay="CENTER" minHeight="100.0" onAction="#actionHandler" prefWidth="100.0" ripplerFill="#ff9ff3" style="-fx-background-color: #b2bec3; -fx-background-radius: 7px;" text="+" textAlignment="CENTER" textFill="#55efc4" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </JFXButton>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

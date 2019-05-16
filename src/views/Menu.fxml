@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="700.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.menuController">
+   <children>
+      <AnchorPane layoutX="200.0" prefHeight="430.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <FontAwesomeIconView glyphName="CLOSE" layoutX="474.0" layoutY="25.0" size="15" />
+            <Pane fx:id="pnl_test" prefHeight="430.0" prefWidth="500.0" style="-fx-background-color: #0055B9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Pane fx:id="pnl_settings" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <fx:include fx:id="pnl_train" source="trainVocab.fxml" />
+            <fx:include fx:id="pnl_datasets" source="datasetLayout.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children></AnchorPane>
+      <AnchorPane prefHeight="430.0" prefWidth="200.0" style="-fx-background-color: #F0F7FF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="430.0" prefWidth="45.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </AnchorPane>
+            <JFXButton fx:id="btn_datasets" alignment="BASELINE_LEFT" graphicTextGap="35.0" layoutY="104.0" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="200.0" ripplerFill="#a2a2a2" text="Datasets">
+               <graphic>
+                  <FontAwesomeIconView fill="#434343" glyphName="ARCHIVE" size="15" />
+               </graphic>
+               <padding>
+                  <Insets left="12.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="btn_train" alignment="BASELINE_LEFT" graphicTextGap="32.0" layoutY="149.0" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="200.0" ripplerFill="#a2a2a2" text="Train">
+               <graphic>
+                  <FontAwesomeIconView fill="#434343" glyphName="GRADUATION_CAP" size="15" />
+               </graphic>
+               <padding>
+                  <Insets left="12.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="btn_test" alignment="BASELINE_LEFT" graphicTextGap="35.0" layoutY="194.0" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="200.0" ripplerFill="#a2a2a2" text="Test">
+               <graphic>
+                  <FontAwesomeIconView fill="#434343" glyphName="ALIGN_LEFT" size="15" />
+               </graphic>
+               <padding>
+                  <Insets left="12.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="btn_settings" alignment="BASELINE_LEFT" graphicTextGap="35.0" layoutY="239.0" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="200.0" ripplerFill="#a2a2a2" text=" Settings">
+               <graphic>
+                  <FontAwesomeIconView fill="#434343" glyphName="SLIDERS" size="15" />
+               </graphic>
+               <padding>
+                  <Insets left="12.0" />
+               </padding>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <fx:include source="title_bar.fxml" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>
