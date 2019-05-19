@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 
 import java.io.IOException;
@@ -25,6 +26,9 @@ public class datasetLayoutController implements Initializable {
 
     @FXML
     private Pane pnl_vocab_input, pnl_add;
+
+    @FXML
+    private ScrollPane scroll_pane;
 
     @FXML
     private void actionHandler(ActionEvent event) throws IOException {
