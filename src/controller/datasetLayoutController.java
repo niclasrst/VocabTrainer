@@ -29,7 +29,7 @@ public class datasetLayoutController implements Initializable {
     private Pane pnl_vocab_input, pnl_add;
 
     @FXML
-    private JFXScrollPane scroll_pane;
+    private ScrollPane scroll_pane;
 
     @FXML
     private void actionHandler(ActionEvent event) throws IOException {
@@ -60,6 +60,8 @@ public class datasetLayoutController implements Initializable {
         pnl_btns.setHgap(15);
         pnl_btns.setVgap(15);
         scroll_pane.setContent(pnl_vbox);
-        JFXScrollPane.smoothScrolling((ScrollPane) scroll_pane.getChildren().get(0));
+        JFXScrollPane.smoothScrolling(scroll_pane);
+        /*scroll_pane.setContent(pnl_vbox);
+        JFXScrollPane.smoothScrolling((ScrollPane) scroll_pane.getChildren().get(0));*/
     }
 }
