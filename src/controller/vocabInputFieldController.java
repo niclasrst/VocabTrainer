@@ -1,6 +1,7 @@
 package controller;
 
 import additional.Dataset;
+import additional.datasetHandler;
 import additional.Vocab;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -8,12 +9,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 public class vocabInputFieldController implements Initializable {
-
     @FXML
     private JFXButton btn_delete, btn_more;
 
@@ -25,9 +28,27 @@ public class vocabInputFieldController implements Initializable {
         String l1 = tf_lang1.getText();
         String l2 = tf_lang2.getText();
 
-        if (!l1.isEmpty() && !l2.isEmpty()) {
+        if (!l1.isEmpty() && !l2.isEmpty() && (!stringInFile(new File("src/one.csv"), l1) || !stringInFile(new File("src/one.csv"), l2))) {
+            System.out.println("[+] Word not in file.");
             Vocab voc = new Vocab(l1, l2);
+            datasetHandler.dOne.data.add(voc);
+            datasetHandler.dOne.saveDataset();
         }
+    }
+
+    private boolean stringInFile(File f, String s) {
+        try {
+            Scanner sc = new Scanner(f);
+
+            while (sc.hasNextLine()) {
+                String line = sc.nextLine();
+                if (line.contains(s)) { return true; }
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("[-] File not found.\n" + e.getMessage());
+        }
+
+        return false;
     }
 
     @FXML

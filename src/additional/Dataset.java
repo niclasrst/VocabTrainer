@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Dataset {
-    ArrayList<Vocab> data;
-    dataHandler handler;
-    String name;
+    public static ArrayList<Vocab> data;
+    public dataHandler handler;
+    public String name;
 
     public Dataset(String name) {
         this.name = name;

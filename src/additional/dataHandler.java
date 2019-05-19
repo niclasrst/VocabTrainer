@@ -1,8 +1,6 @@
 package additional;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -36,17 +34,16 @@ public class dataHandler {
     }
 
     public void writeData(List<Vocab> data, String name) {
-        try (PrintWriter writer = new PrintWriter(new File("src/" + name + ".csv"))) {
-            StringBuilder sb = new StringBuilder();
+        try {
+            FileWriter writer = new FileWriter(new File("src/" + name + ".csv"), true);
 
-            for (int i = 0; i < data.size(); i++) {
-                sb.append(data.get(i).getVocab());
-                sb.append("\n");
-            }
+            for (int i = 0; i < data.size(); i++) { writer.append(data.get(i).getVocab() + "\n"); }
 
-            writer.write(sb.toString());
+            writer.flush();
+            writer.close();
+
             System.out.println("[+] Successfully wrote to file.");
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             System.out.println("[-] Error writing file.\n" + e.getMessage());
         }
     }

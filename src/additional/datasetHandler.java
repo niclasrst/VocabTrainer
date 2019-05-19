@@ -1,12 +1,8 @@
 package additional;
 
 public class datasetHandler {
-    public Dataset dOne, dTwo, dThree, dFour;
-
-    public datasetHandler() {
-        this.dOne = new Dataset("one");
-        this.dTwo = new Dataset("two");
-        this.dThree = new Dataset("three");
-        this.dFour = new Dataset("four");
-    }
+    public static Dataset dOne = new Dataset("one");
+    public static Dataset dTwo = new Dataset("two");
+    public static Dataset dThree = new Dataset("three");
+    public static Dataset dFour = new Dataset("four");
 }
