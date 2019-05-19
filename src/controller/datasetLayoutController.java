@@ -61,7 +61,5 @@ public class datasetLayoutController implements Initializable {
         pnl_btns.setVgap(15);
         scroll_pane.setContent(pnl_vbox);
         JFXScrollPane.smoothScrolling(scroll_pane);
-        /*scroll_pane.setContent(pnl_vbox);
-        JFXScrollPane.smoothScrolling((ScrollPane) scroll_pane.getChildren().get(0));*/
     }
 }
