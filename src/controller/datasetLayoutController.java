@@ -1,6 +1,7 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXScrollPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,7 +29,7 @@ public class datasetLayoutController implements Initializable {
     private Pane pnl_vocab_input, pnl_add;
 
     @FXML
-    private ScrollPane scroll_pane;
+    private JFXScrollPane scroll_pane;
 
     @FXML
     private void actionHandler(ActionEvent event) throws IOException {
@@ -58,5 +59,7 @@ public class datasetLayoutController implements Initializable {
         pnl_btns.setAlignment(Pos.CENTER);
         pnl_btns.setHgap(15);
         pnl_btns.setVgap(15);
+        scroll_pane.setContent(pnl_vbox);
+        JFXScrollPane.smoothScrolling((ScrollPane) scroll_pane.getChildren().get(0));
     }
 }

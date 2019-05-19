@@ -29,6 +29,5 @@ public class trainVocabController implements Initializable {
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-    }
+    public void initialize(URL location, ResourceBundle resources) { }
 }

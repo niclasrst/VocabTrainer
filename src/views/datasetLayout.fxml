@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXScrollPane?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -84,9 +84,9 @@
                   <FontAwesomeIconView fill="#31eb97" glyphName="CHECK" size="25" />
                </graphic>
             </JFXButton>
-            <ScrollPane fx:id="scroll_pane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" prefHeight="340.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
-               <content>
-                  <VBox fx:id="pnl_vbox" fillWidth="false" minHeight="340.0" minWidth="500.0" prefHeight="340.0" prefWidth="500.0" style="-fx-background-color: #222f3e;">
+            <JFXScrollPane fx:id="scroll_pane" alignment="TOP_LEFT" style="-fx-background-color: #222f3e;" stylesheets="@../styles/scrollpane_styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+               <children>
+                  <VBox fx:id="pnl_vbox" style="-fx-background-color: #222f3e;">
                      <children>
                         <fx:include minHeight="75.0" minWidth="500.0" source="vocabInputField.fxml" />
                         <JFXButton fx:id="btn_add_field" alignment="CENTER" contentDisplay="CENTER" onAction="#actionHandler" prefHeight="40.0" prefWidth="40.0" ripplerFill="#4fc6b2" style="-fx-background-color: #fff; -fx-background-radius: 100;" text="+" textAlignment="CENTER" textFill="#24ee97">
@@ -102,8 +102,8 @@
                         </JFXButton>
                      </children>
                   </VBox>
-               </content>
-            </ScrollPane>
+               </children>
+            </JFXScrollPane>
             <SVGPath content="M 100 350 L 250 200 L 400 350 L 600 250 L 800 350 " fill="#feca57" AnchorPane.bottomAnchor="-50.0" AnchorPane.leftAnchor="-100.0" AnchorPane.rightAnchor="-127.0" />
          </children>
       </AnchorPane>
