@@ -15,6 +15,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class datasetLayoutController implements Initializable {
+    private int idx = 1;
 
     @FXML
     private JFXButton btn_1, btn_2, btn_3, btn_4, btn_done, btn_add_field;
@@ -34,22 +35,18 @@ public class datasetLayoutController implements Initializable {
     @FXML
     private void actionHandler(ActionEvent event) throws IOException {
         if (event.getSource() == btn_done) { pnl_add.toFront(); }
-        if (event.getSource() == btn_add_field) { pnl_vbox.getChildren().add(new FXMLLoader().load(getClass().getResource("../views/vocabInputField.fxml"))); }
+        if (event.getSource() == btn_add_field) { pnl_vbox.getChildren().add(idx, new FXMLLoader().load(getClass().getResource("../views/vocabInputField.fxml"))); idx++; }
     }
 
     @FXML
     public void onClick(ActionEvent event) {
         if (event.getSource() == btn_1) {
-            System.out.println("[+] Btn 1 pressed");
             pnl_vocab_input.toFront();
         } else if (event.getSource() == btn_2) {
-            System.out.println("[+] Btn 2 pressed");
             pnl_vocab_input.toFront();
         } else if (event.getSource() == btn_3) {
-            System.out.println("[+] Btn 3 pressed");
             pnl_vocab_input.toFront();
         } else if (event.getSource() == btn_4) {
-            System.out.println("[+] Btn 4 pressed");
             pnl_vocab_input.toFront();
         }
     }
