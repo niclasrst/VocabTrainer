@@ -8,13 +8,13 @@ public class Vocab {
         this.l2 = lang2;
     }
 
-    public String getTranslation(String l1) {
-        if (l1 ==this.l1) { return this.l2; }
-        else if (l1 == this.l2) { return this.l1; }
-        return "No given translation";
+    // TODO: 20.05.2019 Probably unnecessary
+    public String getTranslation() {
+        return this.l2;
     }
 
     public String getVocab() {
         return this.l1 + "," + this.l2;
     }
+    public static Vocab fromString(String s) { return new Vocab(s.split(",")[0], s.split(",")[1]); }
 }

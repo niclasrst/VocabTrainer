@@ -1,6 +1,5 @@
 package controller;
 
-import additional.Dataset;
 import additional.datasetHandler;
 import additional.Vocab;
 import com.jfoenix.controls.JFXButton;
@@ -12,7 +11,6 @@ import javafx.fxml.Initializable;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
@@ -33,6 +31,9 @@ public class vocabInputFieldController implements Initializable {
             Vocab voc = new Vocab(l1, l2);
             datasetHandler.dOne.data.add(voc);
             datasetHandler.dOne.saveDataset();
+
+            tf_lang1.setDisable(true);
+            tf_lang2.setDisable(true);
         }
     }
 
@@ -57,22 +58,25 @@ public class vocabInputFieldController implements Initializable {
         tf_lang2.setDisable(!tf_lang2.isDisable());
     }
 
-    public void loadData(Dataset data) {
-        List<Vocab> d = data.readDataset();
+    public void loadVoc(Vocab v) {
+        tf_lang1.setText(v.l1);
+        tf_lang2.setText(v.l2);
+    }
 
-        for (Vocab v : d) {
-            tf_lang1.setText(v.l1);
-            tf_lang2.setText(v.l2);
+    // TODO: 20.05.2019 Load data on open dataset to view your vocabs
+    public void loadData() {
+        if (datasetHandler.dOne.chosen) {
+            for (Vocab v : datasetHandler.dOne.data) {
+                loadVoc(v);
+            }
         }
-
-        System.out.println("[+] Data loaded.");
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tf_lang1.setOnAction(this::onEnter);
         tf_lang2.setOnAction(this::onEnter);
-        tf_lang1.setDisable(true);
-        tf_lang2.setDisable(true);
+        tf_lang1.setDisable(false);
+        tf_lang2.setDisable(false);
     }
 }
