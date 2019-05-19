@@ -1,10 +1,10 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 public class trainVocabController implements Initializable {
 
     @FXML
-    private AnchorPane pnl_choose_data, pnl_train_input;
+    private AnchorPane pnl_train_input;
 
     @FXML
     private JFXButton btn_enter_guess;
@@ -22,8 +22,13 @@ public class trainVocabController implements Initializable {
     private JFXTextField tf_guess;
 
     @FXML
-    private ProgressBar progressBar;
+    private JFXProgressBar progressBar;
+
+    private void chooseData() {
+
+    }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {}
+    public void initialize(URL location, ResourceBundle resources) {
+    }
 }

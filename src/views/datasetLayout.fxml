@@ -55,15 +55,42 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <GridPane fx:id="pnl_btns" alignment="CENTER" prefHeight="370.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+            <GridPane fx:id="pnl_btns" alignment="CENTER" hgap="20.0" prefHeight="370.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
               <columnConstraints>
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" valignment="CENTER" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <JFXButton fx:id="btn_add" alignment="CENTER" contentDisplay="CENTER" minHeight="100.0" onAction="#actionHandler" prefWidth="100.0" ripplerFill="#ff9ff3" style="-fx-background-color: #b2bec3; -fx-background-radius: 7px;" text="+" textAlignment="CENTER" textFill="#55efc4" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+                  <JFXButton fx:id="btn_1" alignment="CENTER" contentDisplay="CENTER" minHeight="100.0" onAction="#onClick" prefWidth="100.0" ripplerFill="#686868" style="-fx-background-color: #b2bec3; -fx-background-radius: 7px;" text="1" textAlignment="CENTER" textFill="#55efc4" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_2" alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="145.0" minHeight="100.0" onAction="#onClick" prefWidth="100.0" ripplerFill="#686868" style="-fx-background-color: #b2bec3; -fx-background-radius: 7px;" text="2" textAlignment="CENTER" textFill="#55efc4" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_3" alignment="CENTER" contentDisplay="CENTER" layoutX="270.0" layoutY="145.0" minHeight="100.0" onAction="#onClick" prefWidth="100.0" ripplerFill="#686868" style="-fx-background-color: #b2bec3; -fx-background-radius: 7px;" text="3" textAlignment="CENTER" textFill="#55efc4" GridPane.columnIndex="2">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_4" alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="145.0" minHeight="100.0" onAction="#onClick" prefWidth="100.0" ripplerFill="#686868" style="-fx-background-color: #b2bec3; -fx-background-radius: 7px;" text="4" textAlignment="CENTER" textFill="#55efc4" GridPane.columnIndex="3">
                      <font>
                         <Font size="30.0" />
                      </font>

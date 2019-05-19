@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class dataHandler {
-    public void readData(String CSV_FILE) {
+    public List<Vocab> readData(String CSV_FILE) {
         List<Vocab> data = new ArrayList<>();
         try (Scanner sc = new Scanner(new File(CSV_FILE))) {
             while (sc.hasNextLine()) {
@@ -17,6 +17,8 @@ public class dataHandler {
         } catch (FileNotFoundException e) {
             System.out.println("[-] Error reading file.\n" + e.getMessage());
         }
+
+        return data;
     }
 
     public Vocab getVocabFromLine(String line) {

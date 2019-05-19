@@ -1,5 +1,6 @@
 package controller;
 
+import additional.Dataset;
 import additional.Vocab;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -8,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class vocabInputFieldController implements Initializable {
@@ -30,8 +32,19 @@ public class vocabInputFieldController implements Initializable {
 
     @FXML
     private void onClick() {
-        tf_lang1.setDisable(false);
-        tf_lang2.setDisable(false);
+        tf_lang1.setDisable(!tf_lang1.isDisable());
+        tf_lang2.setDisable(!tf_lang2.isDisable());
+    }
+
+    public void loadData(Dataset data) {
+        List<Vocab> d = data.readDataset();
+
+        for (Vocab v : d) {
+            tf_lang1.setText(v.l1);
+            tf_lang2.setText(v.l2);
+        }
+
+        System.out.println("[+] Data loaded.");
     }
 
     @Override

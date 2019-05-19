@@ -1,6 +1,7 @@
 package additional;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Dataset {
     ArrayList<Vocab> data;
@@ -14,5 +15,5 @@ public class Dataset {
     }
 
     public void saveDataset() { handler.writeData(this.data, this.name); }
-    public void readDataset() { handler.readData("src/" + this.name); }
+    public List<Vocab> readDataset() { return handler.readData("src/" + this.name + ".csv"); }
 }
