@@ -52,6 +52,18 @@ public class datasetLayoutController implements Initializable {
         }
     }
 
+    public void loadVocFieldsOne() {
+        try {
+            int len = datasetHandler.dOne.data.size();
+            for (int i = 0; i < len; i++) {
+                pnl_vbox.getChildren().add(idx, new FXMLLoader().load(getClass().getResource("../views/vocabInputField.fxml")));
+                idx++;
+            }
+        } catch (IOException e) {
+            System.out.println("[-] Error loading voc fields.\n" + e.getMessage());
+        }
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         pnl_btns.setAlignment(Pos.CENTER);
@@ -59,5 +71,6 @@ public class datasetLayoutController implements Initializable {
         pnl_btns.setVgap(15);
         scroll_pane.setContent(pnl_vbox);
         JFXScrollPane.smoothScrolling(scroll_pane);
+        loadVocFieldsOne();
     }
 }

@@ -35,7 +35,7 @@ public class trainVocabController implements Initializable {
     private JFXTextField tf_guess;
 
     @FXML
-    private Label lbl_vocab;
+    private Label lbl_vocab, lbl_indicator, lbl_rewrite;
 
     @FXML
     private JFXProgressBar progressBar;
@@ -64,6 +64,12 @@ public class trainVocabController implements Initializable {
         if (event.getSource() == btn_enter_guess) {
             if (tf_guess.getText().equals(choice.l2)) {
                 nextVocab();
+                lbl_rewrite.setVisible(false);
+                lbl_indicator.setVisible(false);
+            } else {
+                lbl_rewrite.setText(choice.l2);
+                lbl_indicator.setVisible(true);
+                lbl_rewrite.setVisible(true);
             }
         }
     }
@@ -82,12 +88,20 @@ public class trainVocabController implements Initializable {
     private void onEnter(ActionEvent event) {
         if (tf_guess.getText().equals(choice.l2)) {
             nextVocab();
+            lbl_rewrite.setVisible(false);
+            lbl_indicator.setVisible(false);
+        } else {
+            lbl_rewrite.setText(choice.l2);
+            lbl_indicator.setVisible(true);
+            lbl_rewrite.setVisible(true);
         }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         lbl_vocab.setText(choice.l1);
+        lbl_indicator.setVisible(false);
+        lbl_rewrite.setVisible(false);
         btn_enter_guess.setOnAction(this::onAction);
         tf_guess.setOnAction(this::onEnter);
     }

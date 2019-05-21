@@ -13,6 +13,7 @@ public class Vocab {
         return this.l2;
     }
 
+    public boolean sameAs(Vocab v) { return (v.l1 == this.l1 && this.l2 == v.l2); }
     public String getVocab() {
         return this.l1 + "," + this.l2;
     }

@@ -17,12 +17,22 @@
       </Label>
       <AnchorPane fx:id="pnl_train_input" style="-fx-background-color: #dfe6e9; -fx-background-radius: 5px;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="105.0">
          <children>
-            <JFXProgressBar fx:id="progressBar" layoutX="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <JFXButton fx:id="btn_enter_guess" layoutX="305.0" layoutY="218.0" prefHeight="35.0" prefWidth="75.0" ripplerFill="#352dc3" style="-fx-background-color: #4059a9; -fx-background-radius: 0;" text="ENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="20.0" />
+            <JFXProgressBar fx:id="progressBar" layoutX="100.0" progress="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <JFXButton fx:id="btn_enter_guess" layoutX="305.0" layoutY="218.0" prefHeight="35.0" prefWidth="75.0" ripplerFill="#352dc3" style="-fx-background-color: #4059a9; -fx-background-radius: 4px;" text="ENTER" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="20.0" />
             <JFXTextField fx:id="tf_guess" layoutX="5.0" layoutY="218.0" prefHeight="35.0" prefWidth="250.0" promptText="Your translation" unFocusColor="#5e5e5e" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="110.0" />
-            <Label fx:id="lbl_vocab" contentDisplay="CENTER" layoutY="63.0" prefHeight="72.0" prefWidth="175.0" style="-fx-alignment: center;" text="VOCAB" textAlignment="CENTER" AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="63.0">
+            <Label fx:id="lbl_vocab" contentDisplay="CENTER" layoutY="52.0" prefHeight="72.0" prefWidth="175.0" style="-fx-alignment: center;" text="VOCAB" textAlignment="CENTER" AnchorPane.bottomAnchor="148.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0">
                <font>
                   <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_indicator" layoutX="38.0" layoutY="127.0" prefHeight="35.0" prefWidth="324.0" text="Leider falsch! Bitte schreibe das Wort einmal ab:" textFill="#e85151">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_rewrite" alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="162.0" prefHeight="46.0" prefWidth="306.0" text="REWRITE" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
                </font>
             </Label>
          </children>

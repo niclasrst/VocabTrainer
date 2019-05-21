@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 public class vocabInputFieldController implements Initializable {
     @FXML
-    private JFXButton btn_delete, btn_more;
+    private JFXButton btn_delete;
 
     @FXML
     private JFXTextField tf_lang1, tf_lang2;
@@ -66,9 +66,7 @@ public class vocabInputFieldController implements Initializable {
     // TODO: 20.05.2019 Load data on open dataset to view your vocabs
     public void loadData() {
         if (datasetHandler.dOne.chosen) {
-            for (Vocab v : datasetHandler.dOne.data) {
-                loadVoc(v);
-            }
+            for (Vocab v : datasetHandler.dOne.data) { loadVoc(v); }
         }
     }
 
