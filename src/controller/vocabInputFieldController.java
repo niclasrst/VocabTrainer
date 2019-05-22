@@ -65,9 +65,7 @@ public class vocabInputFieldController implements Initializable {
 
     // TODO: 20.05.2019 Load data on open dataset to view your vocabs
     public void loadData() {
-        if (datasetHandler.dOne.chosen) {
-            for (Vocab v : datasetHandler.dOne.data) { loadVoc(v); }
-        }
+        for (Vocab v : datasetHandler.dOne.data) { loadVoc(v); }
     }
 
     @Override

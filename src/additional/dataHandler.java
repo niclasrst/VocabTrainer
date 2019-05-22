@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class dataHandler {
-    public List<Vocab> readData(String CSV_FILE) {
-        List<Vocab> data = new ArrayList<>();
+    public ArrayList<Vocab> readData(String CSV_FILE) {
+        System.out.println(CSV_FILE);
+        ArrayList<Vocab> data = new ArrayList<>();
         try (Scanner sc = new Scanner(new File(CSV_FILE))) {
             while (sc.hasNextLine()) {
                 data.add(getVocabFromLine(sc.nextLine()));

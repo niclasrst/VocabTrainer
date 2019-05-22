@@ -17,6 +17,41 @@
 
 <AnchorPane prefHeight="430.0" prefWidth="500.0" style="-fx-background-color: #222f3e;" stylesheets="@../styles/dataset_style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.datasetLayoutController">
    <children>
+      <AnchorPane fx:id="pnl_vocab_input" prefHeight="430.0" prefWidth="500.0" style="-fx-background-color: #222f3e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="TYPE IN YOUR WORDS" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="25.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btn_done" ellipsisString="" layoutX="309.0" layoutY="13.0" onAction="#actionHandler" prefHeight="50.0" prefWidth="50.0" ripplerFill="#42ffa5" AnchorPane.rightAnchor="141.0" AnchorPane.topAnchor="13.0">
+               <graphic>
+                  <FontAwesomeIconView fill="#31eb97" glyphName="CHECK" size="25" />
+               </graphic>
+            </JFXButton>
+            <ScrollPane fx:id="scroll_pane" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222f3e;" stylesheets="@../styles/scrollpane_styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+               <content>
+                  <VBox fx:id="pnl_vbox" prefHeight="370.0" prefWidth="500.0" style="-fx-background-color: #222f3e;">
+                     <children>
+                        <fx:include minHeight="75.0" minWidth="500.0" source="vocabInputField.fxml" />
+                        <JFXButton fx:id="btn_add_field" alignment="CENTER" contentDisplay="CENTER" onAction="#actionHandler" prefHeight="40.0" prefWidth="40.0" ripplerFill="#4fc6b2" style="-fx-background-color: #fff; -fx-background-radius: 100;" text="+" textAlignment="CENTER" textFill="#24ee97">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <VBox.margin>
+                              <Insets left="230.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <SVGPath content="M 100 350 L 250 200 L 400 350 L 600 250 L 800 350 " fill="#feca57" AnchorPane.bottomAnchor="-50.0" AnchorPane.leftAnchor="-100.0" AnchorPane.rightAnchor="-127.0" />
+         </children>
+      </AnchorPane>
       <AnchorPane fx:id="pnl_add" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222f3e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <SVGPath content="M 50 200 Q 150 50 200 400 Q 250 550 300 300 Q 350 50 550 150 " fill="#ff6b6b" AnchorPane.rightAnchor="-200.0" AnchorPane.topAnchor="-150.0" />
@@ -70,41 +105,6 @@
                   </JFXButton>
                </children>
             </GridPane>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="pnl_vocab_input" prefHeight="430.0" prefWidth="500.0" style="-fx-background-color: #222f3e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Label layoutX="14.0" layoutY="14.0" text="TYPE IN YOUR WORDS" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="25.0">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <JFXButton fx:id="btn_done" ellipsisString="" layoutX="309.0" layoutY="13.0" onAction="#actionHandler" prefHeight="50.0" prefWidth="50.0" ripplerFill="#42ffa5" AnchorPane.rightAnchor="141.0" AnchorPane.topAnchor="13.0">
-               <graphic>
-                  <FontAwesomeIconView fill="#31eb97" glyphName="CHECK" size="25" />
-               </graphic>
-            </JFXButton>
-            <ScrollPane fx:id="scroll_pane" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222f3e;" stylesheets="@../styles/scrollpane_styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
-               <content>
-                  <VBox fx:id="pnl_vbox" prefHeight="370.0" prefWidth="500.0" style="-fx-background-color: #222f3e;">
-                     <children>
-                        <fx:include minHeight="75.0" minWidth="500.0" source="vocabInputField.fxml" />
-                        <JFXButton fx:id="btn_add_field" alignment="CENTER" contentDisplay="CENTER" onAction="#actionHandler" prefHeight="40.0" prefWidth="40.0" ripplerFill="#4fc6b2" style="-fx-background-color: #fff; -fx-background-radius: 100;" text="+" textAlignment="CENTER" textFill="#24ee97">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <VBox.margin>
-                              <Insets left="230.0" top="10.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </JFXButton>
-                     </children>
-                  </VBox>
-               </content>
-            </ScrollPane>
-            <SVGPath content="M 100 350 L 250 200 L 400 350 L 600 250 L 800 350 " fill="#feca57" AnchorPane.bottomAnchor="-50.0" AnchorPane.leftAnchor="-100.0" AnchorPane.rightAnchor="-127.0" />
          </children>
       </AnchorPane>
    </children>

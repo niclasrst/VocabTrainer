@@ -35,7 +35,7 @@ public class datasetLayoutController implements Initializable {
 
     @FXML
     private void actionHandler(ActionEvent event) throws IOException {
-        if (event.getSource() == btn_done) { pnl_add.toFront(); }
+        if (event.getSource() == btn_done) { pnl_add.toFront(); pnl_vbox.getChildren().remove(0, idx); idx = 0; System.out.println("Done"); }
         if (event.getSource() == btn_add_field) { pnl_vbox.getChildren().add(idx, new FXMLLoader().load(getClass().getResource("../views/vocabInputField.fxml"))); idx++; }
     }
 
@@ -43,24 +43,31 @@ public class datasetLayoutController implements Initializable {
     public void onClick(ActionEvent event) {
         if (event.getSource() == btn_1) {
             pnl_vocab_input.toFront();
+            datasetHandler.dOne.data = datasetHandler.dOne.readDataset();
+            loadVocFields(datasetHandler.dOne.data.size());
         } else if (event.getSource() == btn_2) {
             pnl_vocab_input.toFront();
+            datasetHandler.dTwo.data = datasetHandler.dTwo.readDataset();
+            loadVocFields(datasetHandler.dTwo.data.size());
         } else if (event.getSource() == btn_3) {
             pnl_vocab_input.toFront();
+            datasetHandler.dThree.data = datasetHandler.dThree.readDataset();
+            loadVocFields(datasetHandler.dThree.data.size());
         } else if (event.getSource() == btn_4) {
             pnl_vocab_input.toFront();
+            datasetHandler.dFour.data = datasetHandler.dFour.readDataset();
+            loadVocFields(datasetHandler.dFour.data.size());
         }
     }
 
-    public void loadVocFieldsOne() {
+    public void loadVocFields(int size) {
         try {
-            int len = datasetHandler.dOne.data.size();
-            for (int i = 0; i < len; i++) {
+            for (int i = 0; i < size; i++) {
                 pnl_vbox.getChildren().add(idx, new FXMLLoader().load(getClass().getResource("../views/vocabInputField.fxml")));
                 idx++;
             }
         } catch (IOException e) {
-            System.out.println("[-] Error loading voc fields.\n" + e.getMessage());
+            System.out.println("[-] Error loading InputField fxml.\n" + e.getMessage());
         }
     }
 
@@ -71,6 +78,5 @@ public class datasetLayoutController implements Initializable {
         pnl_btns.setVgap(15);
         scroll_pane.setContent(pnl_vbox);
         JFXScrollPane.smoothScrolling(scroll_pane);
-        loadVocFieldsOne();
     }
 }
