@@ -1,5 +1,7 @@
 package controller;
 
+import additional.Vocab;
+import additional.datasetHandler;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -31,5 +33,7 @@ public class menuController implements Initializable {
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {}
+    public void initialize(URL location, ResourceBundle resources) {
+        datasetHandler.init();
+    }
 }

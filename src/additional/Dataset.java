@@ -3,7 +3,7 @@ package additional;
 import java.util.ArrayList;
 
 public class Dataset {
-    public static ArrayList<Vocab> data;
+    public ArrayList<Vocab> data;
     public dataHandler handler;
     public String name;
 
@@ -14,5 +14,5 @@ public class Dataset {
     }
 
     public void saveDataset() { handler.writeData(this.data, this.name); }
-    public ArrayList<Vocab> readDataset() { return handler.readData("src/" + this.name /*"one"*/ + ".csv"); }
+    public ArrayList<Vocab> readDataset() { return handler.readData("src/" + this.name + ".csv"); }
 }

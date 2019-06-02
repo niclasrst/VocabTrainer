@@ -19,7 +19,7 @@ public class datasetLayoutController implements Initializable {
     private int idx = 1;
 
     @FXML
-    private JFXButton btn_1, btn_2, btn_3, btn_4, btn_done, btn_add_field;
+    private JFXButton btn_1, btn_2, btn_3, btn_done, btn_add_field;
 
     @FXML
     private GridPane pnl_btns;
@@ -36,6 +36,7 @@ public class datasetLayoutController implements Initializable {
     @FXML
     private void actionHandler(ActionEvent event) throws IOException {
         if (event.getSource() == btn_done) { pnl_add.toFront(); pnl_vbox.getChildren().remove(0, idx); idx = 0; System.out.println("Done"); }
+        if (event.getSource() == btn_done) { pnl_add.toFront(); }
         if (event.getSource() == btn_add_field) { pnl_vbox.getChildren().add(idx, new FXMLLoader().load(getClass().getResource("../views/vocabInputField.fxml"))); idx++; }
     }
 
@@ -53,10 +54,6 @@ public class datasetLayoutController implements Initializable {
             pnl_vocab_input.toFront();
             datasetHandler.dThree.data = datasetHandler.dThree.readDataset();
             loadVocFields(datasetHandler.dThree.data.size());
-        } else if (event.getSource() == btn_4) {
-            pnl_vocab_input.toFront();
-            datasetHandler.dFour.data = datasetHandler.dFour.readDataset();
-            loadVocFields(datasetHandler.dFour.data.size());
         }
     }
 

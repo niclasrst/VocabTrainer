@@ -65,7 +65,6 @@
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
                   <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
                   <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" valignment="CENTER" vgrow="SOMETIMES" />
@@ -88,14 +87,6 @@
                      </effect>
                   </JFXButton>
                   <JFXButton fx:id="btn_3" alignment="CENTER" contentDisplay="CENTER" layoutX="270.0" layoutY="145.0" minHeight="100.0" onAction="#onClick" prefWidth="100.0" ripplerFill="#686868" style="-fx-background-color: #b2bec3; -fx-background-radius: 7px;" text="3" textAlignment="CENTER" textFill="#55efc4" GridPane.columnIndex="2">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                  </JFXButton>
-                  <JFXButton fx:id="btn_4" alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="145.0" minHeight="100.0" onAction="#onClick" prefWidth="100.0" ripplerFill="#686868" style="-fx-background-color: #b2bec3; -fx-background-radius: 7px;" text="4" textAlignment="CENTER" textFill="#55efc4" GridPane.columnIndex="3">
                      <font>
                         <Font size="30.0" />
                      </font>

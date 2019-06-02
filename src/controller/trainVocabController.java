@@ -1,18 +1,16 @@
 package controller;
 
 import additional.Vocab;
+import additional.datasetHandler;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXTextField;
-import com.sun.xml.internal.bind.v2.TODO;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
@@ -21,8 +19,8 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class trainVocabController implements Initializable {
-    private Vocab choice = chooseVocab(new File("src/one.csv"));
-    private Vocab last = choice;
+    private static Vocab choice = chooseVocab(new File("src/one.csv"));
+    private static Vocab last = choice;
     private double p = 0.05;
 
     @FXML
@@ -78,8 +76,13 @@ public class trainVocabController implements Initializable {
         progressBar.setProgress(p);
         tf_guess.setText("");
         tf_guess.setFocusTraversable(true);
-        choice = chooseVocab(new File("src/one.csv"));
+
         // TODO: 20.05.2019 Check if choice is same as last!
+        last = choice;
+        choice = chooseVocab(new File("src/one.csv"));
+        while (last.l1 == choice.l1) {
+            choice = chooseVocab(new File("src/one.csv"));
+        }
         lbl_vocab.setText(choice.l1);
         p += 0.05;
     }
@@ -90,10 +93,13 @@ public class trainVocabController implements Initializable {
             nextVocab();
             lbl_rewrite.setVisible(false);
             lbl_indicator.setVisible(false);
+
+            datasetHandler.migrate(choice, datasetHandler.dOne, datasetHandler.dTwo);
         } else {
             lbl_rewrite.setText(choice.l2);
             lbl_indicator.setVisible(true);
             lbl_rewrite.setVisible(true);
+            tf_guess.setText("");
         }
     }
 
